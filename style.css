@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #f5853f;
+    --gray: #e8e9eb;
+}
+
+body {
+    font-family: cursive;
+}
+
+/* G A M E - T I T L E*/
+.game .title-box {
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.game .title-box a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* G A M E * T I T L E */
+
+/* G A M E - D I F F I C U L T Y */
+
+.game .difficulty-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    transition: 1s;
+}
+
+.game .difficulty-border {
+    border: 5px solid var(--main-color);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.game .difficulty-border div {
+    margin-bottom: 5%;
+}
+
+.game .difficulty-box h3 {
+    font-size: 30px;
+    margin-bottom: 10%;
+}
+
+.game .difficulty-box button {
+    width: 100%;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 15px 0px;
+    font-size: 20px;
+    background-color: var(--gray);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.game .difficulty-box button:focus {
+    outline: none;
+}
+.game .difficulty-box button span {
+    transition: 0.7s;
+    padding: 14px;
+}
+
+.game .difficulty-box button span:hover {
+    box-shadow: 0px 0 0 200px var(--main-color);
+    background-color: var(--main-color);
+    color: white;
+}
+
+.game .difficulty-box p span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.transform {
+    transform: translateY(-120%);
+}
+.display-none {
+    display: none !important;
+}
+
+/* G A M E - D I F F I C U L T Y */
+
+/* C O N T A I N E R */
+
+.container {
+    margin: 5% 10%;
+}
+
+.container .header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .header-box .timmer {
+    display: flex;
+    width: 150px;
+}
+
+.container .header-box .timmer img {
+    width: 30%;
+}
+
+.container .header-box .timmer h3 {
+    margin: 5px auto;
+}
+
+.container .header-box span {
+    color: var(--main-color);
+}
+
+.container .score {
+    width: 150px;
+}
+
+.container #numberOfWords {
+    color: black !important;
+}
+
+.container .header-box h1 {
+    color: var(--main-color);
+    font-size: 60px;
+    user-select: none;
+}
+
+.container .input-box {
+    text-align: center;
+    margin: 7% 0px;
+}
+
+.container .input-box input {
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    width: 60%;
+    height: 10vh;
+    font-size: 30px;
+    text-align: center;
+}
+.container .input-box input:focus {
+    outline: none;
+}
+
+/* G A M E * O V E R */
+
+.game-result {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    margin: 5%;
+    text-align: center;
+}
+
+.game-result .popup {
+    border: 3px solid var(--main-color);
+    border-radius: 5px;
+    padding: 50px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.game-result .popup button {
+    margin-top: 23%;
+    width: 90%;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 15px 0px;
+    font-size: 20px;
+    background-color: var(--gray);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+.game-result button span {
+    transition: 0.7s;
+    padding: 8px;
+}
+
+.game-result button span:hover {
+    box-shadow: 0px 0 0 200px var(--main-color);
+    background-color: var(--main-color);
+    color: white;
+}
+
+@media (max-width: 750px) {
+    .container {
+        margin: 5% 2%;
+    }
+
+    .container .header-box h1 {
+        font-size: 40px;
+    }
+
+    .container .header-box .timmer img {
+        width: 24%;
+    }
+
+    .container .input-box input {
+        width: 80%;
+        height: 7vh;
+    }
+}
