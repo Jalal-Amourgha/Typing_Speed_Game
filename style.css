@@ -201,6 +201,8 @@ body {
     color: white;
 }
 
+/* M E D I A */
+
 @media (max-width: 750px) {
     .container {
         margin: 5% 2%;

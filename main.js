@@ -121,13 +121,17 @@ input.onpaste = function () {
 };
 
 difficultyButtons.onclick = function (e) {
+    //Taking the value of button clicked
     difficulty = e["target"]["className"];
+
+    //remove the difficulty-box from screen
     document.querySelector(".difficulty-box").classList.add("transform");
     setTimeout(() => {
         document.querySelector(".difficulty-box").classList.add("display-none");
         gameBox.classList.remove("display-none");
     }, 900);
 
+    //Cheking The Difficulty to adapte timmer
     if (difficulty === "easy") {
         numberOfWords.innerHTML = "15";
         time = 20;
@@ -138,18 +142,24 @@ difficultyButtons.onclick = function (e) {
         numberOfWords.innerHTML = "50";
         time = 10;
     }
+
+    //Start The Game
     startGame(difficulty);
 };
 
+//Increase The Timmer by -1s
 const timeInterval = setInterval(updateTime, 1000);
 
 function startGame(difficulty) {
+    //Helping The User from Not Wasting Time
     setTimeout(() => {
         input.focus();
     }, 1000);
 
+    //Update The Score
     updateScore();
 
+    //Update The Time
     updateTime();
 
     if (difficulty === "easy") {
@@ -163,6 +173,7 @@ function startGame(difficulty) {
     input.addEventListener("input", (e) => {
         let enteredText = e.target.value;
 
+        //Cheking Live Input Value Action
         if (enteredText === randomWord) {
             e.target.value = "";
 
@@ -183,36 +194,43 @@ function startGame(difficulty) {
     });
 }
 
+//Generate Random Work For Easy Mode
 function easyDifficulty() {
     randomWord = easy[Math.floor(Math.random() * easy.length)];
 
     word.innerHTML = randomWord;
 
+    //Remove The Word Selected For Avoiding Repetition
     easy.splice(easy.indexOf(randomWord), 1);
 
     return randomWord;
 }
 
+//Generate Random Work For Normal Mode
 function normalDifficulty() {
     randomWord = normal[Math.floor(Math.random() * easy.length)];
 
     word.innerHTML = randomWord;
 
+    //Remove The Word Selected For Avoiding Repetition
     normal.splice(normal.indexOf(randomWord), 1);
 
     return randomWord;
 }
 
+//Generate Random Work For Hard Mode
 function hardDifficulty() {
     randomWord = hard[Math.floor(Math.random() * easy.length)];
 
     word.innerHTML = randomWord;
 
+    //Remove The Word Selected For Avoiding Repetition
     hard.splice(hard.indexOf(randomWord), 1);
 
     return randomWord;
 }
 
+//Update The Score For All The Difficulties
 function updateScore() {
     if (difficulty === "easy") {
         counter++;
@@ -235,6 +253,7 @@ function updateScore() {
     }
 }
 
+//Update Time
 function updateTime() {
     time--;
     if (time === 0) {
@@ -243,6 +262,7 @@ function updateTime() {
     displayTime.innerHTML = time;
 }
 
+//Game Result
 function gameResult() {
     gameBox.classList.add("display-none");
     document.querySelector(".game-result").classList.remove("display-none");
@@ -255,6 +275,7 @@ function gameResult() {
     }
 }
 
+//To Re Play Again
 function playAgain() {
     location.reload();
 }
