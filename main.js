@@ -102,6 +102,8 @@ let hard = [
     "excitement",
 ];
 
+console.log(normal.length);
+
 let difficultyButtons = document.querySelector(".difficulty-box");
 let gameBox = document.querySelector(".container");
 let word = document.getElementById("word");
@@ -180,15 +182,15 @@ function startGame(difficulty) {
             if (difficulty === "easy") {
                 easyDifficulty();
                 updateScore();
-                time = 20;
+                time = 21;
             } else if (difficulty === "normal") {
                 normalDifficulty();
                 updateScore();
-                time = 15;
+                time = 16;
             } else {
                 hardDifficulty();
                 updateScore();
-                time = 10;
+                time = 11;
             }
         }
     });
@@ -208,7 +210,7 @@ function easyDifficulty() {
 
 //Generate Random Work For Normal Mode
 function normalDifficulty() {
-    randomWord = normal[Math.floor(Math.random() * easy.length)];
+    randomWord = normal[Math.floor(Math.random() * normal.length)];
 
     word.innerHTML = randomWord;
 
@@ -220,7 +222,7 @@ function normalDifficulty() {
 
 //Generate Random Work For Hard Mode
 function hardDifficulty() {
-    randomWord = hard[Math.floor(Math.random() * easy.length)];
+    randomWord = hard[Math.floor(Math.random() * hard.length)];
 
     word.innerHTML = randomWord;
 
