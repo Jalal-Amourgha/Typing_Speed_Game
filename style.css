@@ -15,6 +15,7 @@ body {
 }
 
 /* G A M E - T I T L E*/
+
 .game .title-box {
     background-color: var(--main-color);
     display: flex;
@@ -45,6 +46,7 @@ body {
 .bubbles {
     position: relative;
     display: flex;
+    justify-content: center;
 }
 
 .bubbles span {
@@ -80,7 +82,7 @@ body {
     background-color: white;
 }
 
-.game .difficulty-border div {
+.game .buttons div {
     margin-bottom: 5%;
 }
 
@@ -275,5 +277,19 @@ body {
     .container .input-box input {
         width: 80%;
         height: 7vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        margin: 5% 1%;
+    }
+
+    .container .header-box h1 {
+        font-size: 25px;
+    }
+
+    .game .difficulty-box {
+        margin: 5%;
     }
 }

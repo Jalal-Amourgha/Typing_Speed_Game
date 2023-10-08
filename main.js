@@ -102,9 +102,7 @@ let hard = [
     "excitement",
 ];
 
-console.log(normal.length);
-
-let difficultyButtons = document.querySelector(".difficulty-box");
+let difficultyButtons = document.querySelector(".buttons");
 let gameBox = document.querySelector(".container");
 let word = document.getElementById("word");
 let score = document.getElementById("score");
